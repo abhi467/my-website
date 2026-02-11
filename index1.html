@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Beacon — Best Coaching for Maths | Science | Accounts | Physics | Chemistry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            color: #17a2b8;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #17a2b8;
+        }
+
+        .get-demo-btn {
+            background: #17a2b8;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .get-demo-btn:hover {
+            background: #138496;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 2rem 3rem;
+            background: #fff;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .admissions-tag {
+            color: #17a2b8;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .admissions-tag::before {
+            content: '✓';
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 .highlight {
+            color: #17a2b8;
+            font-style: italic;
+        }
+
+        .hero .tagline {
+            color: #888;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background: #17a2b8;
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background: #138496;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #17a2b8;
+            padding: 0.9rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            border: 2px solid #17a2b8;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-circle {
+            width: 350px;
+            height: 350px;
+            background: #2c2c2c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .logo-circle::before {
+            content: '';
+            position: absolute;
+            inset: 15px;
+            border: 3px solid white;
+            border-radius: 50%;
+        }
+
+        .book-icon {
+            font-size: 120px;
+            color: #17a2b8;
+        }
+
+        .price-badge {
+            position: absolute;
+            bottom: 20px;
+            right: -20px;
+            background: white;
+            padding: 1.2rem 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .price-badge .price {
+            color: #17a2b8;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .price-badge .price-desc {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .why-choose-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+        }
+
+        .why-choose h2 {
+            font-size: 2.5rem;
+            font-family: 'Crimson Pro', serif;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .why-choose h2 .highlight {
+            color: #17a2b8;
+            font-style: italic;
+        }
+
+        .why-choose-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .meet-faculty {
+            color: #17a2b8;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meet-faculty::after {
+            content: '→';
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #17a2b8;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Academic Spectrum Section */
+        .academic-spectrum {
+            padding: 5rem 2rem;
+            background: #2c2c2c;
+            color: white;
+        }
+
+        .spectrum-header {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .spectrum-header h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+        }
+
+        .spectrum-header p {
+            color: #aaa;
+            max-width: 400px;
+        }
+
+        .view-curriculum {
+            background: transparent;
+            border: 1px solid #555;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .view-curriculum:hover {
+            border-color: #17a2b8;
+            background: rgba(23, 162, 184, 0.1);
+        }
+
+        .spectrum-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .spectrum-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .spectrum-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(23, 162, 184, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .spectrum-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(23, 162, 184, 0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 24px;
+        }
+
+        .spectrum-label {
+            font-size: 0.75rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .spectrum-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: white;
+        }
+
+        .spectrum-card p {
+            color: #aaa;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* TutorConnect Section */
+        .tutorconnect {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .tutorconnect-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tutorconnect h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .tutorconnect h2 .highlight {
+            color: #17a2b8;
+            font-style: italic;
+        }
+
+        .tutorconnect-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .step-item {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #17a2b8;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        .step-item p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .testimonials h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #17a2b8;
+        }
+
+        .testimonial-text {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            color: #333;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c2c2c;
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #17a2b8;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #aaa;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #17a2b8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .modal-content h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .modal-subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #17a2b8;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-cancel {
+            flex: 1;
+            background: #f0f0f0;
+            color: #666;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            flex: 1;
+            background: #17a2b8;
+            color: white;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-container,
+            .why-choose-container {
+                grid-template-columns: 1fr;
+            }
+
+            .spectrum-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .features-grid,
+            .spectrum-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .logo-circle {
+                width: 280px;
+                height: 280px;
+            }
+
+            .book-icon {
+                font-size: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">The Beacon</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#tutorconnect">TutorConnect</a></li>
+                <li><a href="#faculty">Faculty</a></li>
+                <li><a href="#tests">Mock Tests</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#fees">Fees</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="get-demo-btn" onclick="openModal()">Get Free Demo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div>
+                <div class="admissions-tag">ADMISSIONS OPEN 2024-25</div>
+                <h1>The<br><span class="highlight">Beacon</span></h1>
+                <p class="tagline">Guiding Minds to Success</p>
+                <p class="hero-description">
+                    Empowering students from Classes 1-12 with expert IIT-trained faculty, personalized attention, and proven results. 
+                    Excellence in Maths, Physics, Chemistry, Applied Mathematics, and Accountancy.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary" onclick="openModal()">Get Free Demo</a>
+                    <a href="#courses" class="btn-secondary">Explore Courses</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="logo-circle">
+                    <div class="book-icon">📚</div>
+                </div>
+                <div class="price-badge">
+                    <div class="price">₹499</div>
+                    <div class="price-desc">Starting monthly fee<br>Small batch sizes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+        <div class="why-choose-container">
+            <div>
+                <h2>Why Choose<br><span class="highlight">The Beacon</span></h2>
+                <p class="why-choose-description">
+                    We are a results-driven coaching institute committed to academic excellence and 
+                    holistic student development. Our proven methodology has transformed thousands of 
+                    students.
+                </p>
+                <a href="#faculty" class="meet-faculty">Meet Our Faculty</a>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎓</div>
+                    <h3>IIT-Led Faculty</h3>
+                    <p>Learn from experienced IIT graduates who bring deep subject knowledge and proven teaching methodologies.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">👥</div>
+                    <h3>Personalized Attention</h3>
+                    <p>Small batch sizes ensure every student receives individual focus and customized learning support.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📖</div>
+                    <h3>Structured Learning</h3>
+                    <p>Comprehensive lesson plans with regular assessments and detailed progress tracking.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📈</div>
+                    <h3>Proven Results</h3>
+                    <p>Track record of consistent grade improvements and examination success year after year.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Spectrum -->
+    <section id="courses" class="academic-spectrum">
+        <div class="spectrum-header">
+            <div>
+                <h2>Academic Spectrum</h2>
+                <p>Comprehensive programs designed for every stage of the learning journey.</p>
+            </div>
+            <a href="#" class="view-curriculum">View Full Curriculum</a>
+        </div>
+        <div class="spectrum-grid">
+            <div class="spectrum-card">
+                <div class="spectrum-icon">✨</div>
+                <div class="spectrum-label">CLASSES 1-5</div>
+                <h3>Foundational</h3>
+                <p>Activity-led learning & assessments</p>
+            </div>
+            <div class="spectrum-card">
+                <div class="spectrum-icon">📚</div>
+                <div class="spectrum-label">CLASSES 6-8</div>
+                <h3>Concept Building</h3>
+                <p>Concept building & practice</p>
+            </div>
+            <div class="spectrum-card">
+                <div class="spectrum-icon">🎯</div>
+                <div class="spectrum-label">CLASSES 9-10</div>
+                <h3>Board Readiness</h3>
+                <p>Board readiness & exam strategy</p>
+            </div>
+            <div class="spectrum-card">
+                <div class="spectrum-icon">🔬</div>
+                <div class="spectrum-label">CLASSES 11-12</div>
+                <h3>Specialization</h3>
+                <p>Deep dives & problem solving</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TutorConnect Section -->
+    <section id="tutorconnect" class="tutorconnect">
+        <div class="tutorconnect-container">
+            <h2>How <span class="highlight">TutorConnect</span> Works</h2>
+            <p class="tutorconnect-subtitle">Premium home tuition services with verified, experienced tutors</p>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Share Requirements</h3>
+                    <p>Tell us your class, subjects, location, and preferred schedule for personalized tutor matching.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>Get Verified Tutors</h3>
+                    <p>We shortlist, verify credentials, and send you trial tutor profiles within 24 hours.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Start Learning</h3>
+                    <p>Take a trial class, confirm your tutor, and begin regular personalized sessions at home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Parents Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"My daughter's confidence and grades improved dramatically in just 2 months. The faculty genuinely cares."</p>
+                <p class="testimonial-author">— Mrs. Verma</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"TutorConnect found the perfect match for my son's learning style. Best decision we made this year."</p>
+                <p class="testimonial-author">— Mr. Kapoor</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Transparent communication, supportive teachers, and excellent results. Highly recommended!"</p>
+                <p class="testimonial-author">— Parent, Class 10 Student</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>
+                    Shop No.- 12, Sector Road, Near City Mall, Greater Noida, Uttar Pradesh 201310<br><br>
+                    📞 +91 9876543210<br>
+                    ✉️ info@thebeacon.edu.in
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Batch Schedules</a></li>
+                    <li><a href="#">Fee Structure</a></li>
+                    <li><a href="#">Apply for Tutor</a></li>
+                    <li><a href="#">Faculty Profiles</a></li>
+                    <li><a href="#">Results & Achievements</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Programs</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Foundation (1-5)</a></li>
+                    <li><a href="#">Middle School (6-8)</a></li>
+                    <li><a href="#">Board Exam (9-10)</a></li>
+                    <li><a href="#">Senior Secondary (11-12)</a></li>
+                    <li><a href="#">TutorConnect</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© The Beacon 2025 — TutorConnect is a service provided by The Beacon</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <h3>Book a Free Demo</h3>
+            <p class="modal-subtitle">Enter your details and we'll contact you on WhatsApp</p>
+            <form id="demoForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Student Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Parent's Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Select Class</option>
+                        <option value="1-5">Classes 1-5</option>
+                        <option value="6-8">Classes 6-8</option>
+                        <option value="9-10">Classes 9-10</option>
+                        <option value="11-12">Classes 11-12</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Preferred Subject</option>
+                        <option value="maths">Mathematics</option>
+                        <option value="physics">Physics</option>
+                        <option value="chemistry">Chemistry</option>
+                        <option value="accounts">Accountancy</option>
+                        <option value="all">All Subjects</option>
+                    </select>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn-submit">I'd like a free demo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            event.preventDefault();
+            document.getElementById('demoModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('demoModal').classList.remove('active');
+        }
+
+        // Close modal on outside click
+        document.getElementById('demoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Form submission
+        document.getElementById('demoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! We will contact you on WhatsApp within 24 hours.');
+            closeModal();
+            this.reset();
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
